@@ -5,7 +5,19 @@
              Title="{Binding Title}">
 
   <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-    <Label Text="Welcome to Xamarin Forms and Prism!" />
-  </StackLayout>
+    <Label IsVisible="{Binding IsCameraNotSupported}" Text="Camera is not supported!" />
 
+    <StackLayout Orientation="Horizontal">
+      <Label Text="Front Camera" />
+      <CheckBox IsChecked="{Binding IsFrontCamera}" />
+    </StackLayout>
+
+    <Button Command="{Binding CmdPhotoCapture}" Text="Take Photo" />
+    <Button Command="{Binding CmdPhotoPicker}" Text="Photo Selector" />
+
+    <Button Command="{Binding CmdVideoRecorder}" Text="Record Video" />
+    <Button Command="{Binding CmdVideoSelector}" Text="Video Selector" />
+
+    <Image Source="{Binding PreviewImage}" />
+  </StackLayout>
 </ContentPage>

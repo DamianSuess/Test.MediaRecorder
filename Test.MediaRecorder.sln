@@ -3,13 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MediaRecorder.Client", "Test.MediaRecorder\Test.MediaRecorder.Client\Test.MediaRecorder.Client.csproj", "{3611821D-BEE9-4CCF-A543-747E7AD134AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.MediaRecorder.Client", "Test.MediaRecorder\Test.MediaRecorder.Client\Test.MediaRecorder.Client.csproj", "{3611821D-BEE9-4CCF-A543-747E7AD134AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Target Platform", "Target Platform", "{3578604A-AA02-4FC2-8EF0-CE1E91F3EBF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MediaRecorder.Droid", "Test.MediaRecorder\Test.MediaRecorder.Droid\Test.MediaRecorder.Droid.csproj", "{0DA69240-3903-465A-92E0-0FEE1BEE1925}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MediaRecorder.UWP", "Test.MediaRecorder\Test.MediaRecorder.UWP\Test.MediaRecorder.UWP.csproj", "{1F343FE4-ED82-4258-851D-FFF4FEBEEEEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FAE6428-8933-4447-9BE7-CE3337B6B82C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		CodeMaid.config = CodeMaid.config
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

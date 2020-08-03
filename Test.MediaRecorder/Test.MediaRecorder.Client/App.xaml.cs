@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Test.MediaRecorder.Client.ViewModels;
 using Test.MediaRecorder.Client.Views;
+using Test.MediaRecorder.Client.Services;
+using System;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -31,13 +33,24 @@ namespace Test.MediaRecorder.Client
     {
       InitializeComponent();
 
-      await NavigationService.NavigateAsync("NavigationPage/MainPage");
+      var nav = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+      if (!nav.Success)
+      {
+        // Log the message, break, or throw an exception
+        Console.WriteLine(nav.Exception.Message);
+        System.Diagnostics.Debugger.Break();
+
+        throw new System.Exception(nav.Exception.Message);
+      }
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
+      // Services
       containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+      containerRegistry.RegisterSingleton<ILogService, LogService>();
 
+      // Navigation
       containerRegistry.RegisterForNavigation<NavigationPage>();
       containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
     }
