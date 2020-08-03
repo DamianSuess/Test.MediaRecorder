@@ -62,9 +62,6 @@ namespace Test.MediaRecorder.Client.ViewModels
 
     private async void OnPhotoCaptureAsync()
     {
-      // Ref:
-      //  - https://mobileprogrammerblog.wordpress.com/2017/01/21/xamarin-forms-with-mvvm-light/
-
       if (IsCameraNotSupported)
       {
         await _dialogService.DisplayAlertAsync("Alert", "Camera is not supported on this device", "OK");
@@ -91,7 +88,6 @@ namespace Test.MediaRecorder.Client.ViewModels
         await _dialogService.DisplayAlertAsync("Saved", "File: " + file.Path, "OK");
       }
 
-      // Method A
       PreviewImage = ImageSource.FromStream(() =>
       {
         var stream = file.GetStream();
